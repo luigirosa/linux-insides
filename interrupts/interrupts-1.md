@@ -45,7 +45,7 @@ There is additional view of an interrupt - `exception`. As I wrote above, an int
 * `traps`;
 * `aborts`.
 
-A `fault` is exceptions that can be corrected. And if it corrected, it allows the program to be restarted. A `trap` is an exception which reported immediately following the execution of the `trap` instruction. Traps allow execution of a program to be continued too as it a `fault` does, but with loss of continuty. And an `boort` is an exception that does not always report location of the instruction which caused the execption and does not allow to restart a program.
+A `fault` is exceptions that can be corrected. And if it corrected, it allows the program to be restarted. A `trap` is an exception which reported immediately following the execution of the `trap` instruction. Traps allow execution of a program to be continued too as it a `fault` does, but with loss of continuty. And an `abort` is an exception that does not always report location of the instruction which caused the execption and does not allow to restart a program.
 
 Also we already know from the previous [part](http://0xax.gitbooks.io/linux-insides/content/Booting/linux-bootstrap-3.html) that interrupts can be `maskable` and `non-maskable`. A maskable interrupts are interrupts which can be banned with the two following instructions for `x86_64` - `sti` and `cli`. We can find they in the linux kernel source code:
 
